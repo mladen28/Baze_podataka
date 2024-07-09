@@ -14,17 +14,26 @@ Napraviti napredni, GUI-orijentisan alat koji izvršava SQL upit koji korisnik u
 
 
 	4. (14 = 1 + 10 + 3) Query checker - provera sintakse i validnost upita:
-*da li kolone i tabele koje su navedene postoje u bazi
-*da li je kolona odabrana za spajanje zapravo strani ključ
+da li kolone i tabele koje su navedene postoje u bazi
+
+da li je kolona odabrana za spajanje zapravo strani ključ
 	Select last_name, first_name, department_name from hr.employees e join hr.departments d on (e.department_name = d.department_name)
-*da li postoje obavezni delovi upita
-*da li je redosled iskaza ispravan
-*da li aliasi imaju navodnike ako su više reči
-*da li funkcije agregacije imaju GROUP BY ako im je potreban)
-*da u WHERE iskazu nije funkcija agregacije
-*da su istovetni tipovi podataka za promenljive i oni koji se selektuju u pravljenju procedure/funkcije
-*da se sve definisane promenljive koriste u kodu procedure/funkcije
-*da li je CSV fajl koji se učitava za Bulk Import u skladu sa strukturom izabrane tabele
+
+da li postoje obavezni delovi upita
+
+da li je redosled iskaza ispravan
+
+da li aliasi imaju navodnike ako su više reči
+
+da li funkcije agregacije imaju GROUP BY ako im je potreban)
+
+da u WHERE iskazu nije funkcija agregacije
+
+da su istovetni tipovi podataka za promenljive i oni koji se selektuju u pravljenju procedure/funkcije
+
+da se sve definisane promenljive koriste u kodu procedure/funkcije
+
+da li je CSV fajl koji se učitava za Bulk Import u skladu sa strukturom izabrane tabele
 
 Definisati konfiguracioni fajl u JSON formatu, koji sadrži ime pravila, opis greške i predlog za ispravku. Konfiguracioni fajl se učitava prilikom pokretanja aplikacije i koristi za formiranje stack_trace. Opis greške ne treba da bude uopšten već konkretan, npr.: “Kolona DEPARTMENT_NAME nije strani ključ za spajanje tabela EMPLOYEES i DEPARTMENTS”. Isto važi i za sugestiju, npr. “Pokušajte sa DEPARTMENT_ID”. Svaki upit se validira pre nego što se pošalje bazi na izvršavanje (šalje se samo ukoliko nema grešaka). Ako greške postoje, ispisuju se sve greške (stack) sa predlozima za korekcije. Jedini izuzetak može da bude poziv da se izvrši procedura/funkcija. 
 
